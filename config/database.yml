@@ -5,5 +5,15 @@ development:
   database: subdomain_dev
   pool: 5
   username: root
-  password: 
+  password:
+  socket: /opt/lampp/var/mysql/mysql.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: subdomain_prod
+  pool: 5
+  username: 
+  password:
   socket: /opt/lampp/var/mysql/mysql.sock
