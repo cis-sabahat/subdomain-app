@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Blogs</h1>
+  <% @blogs.each do |blog| %>
+    <li><%= link_to blog.name, root_url(subdomain: blog.subdomain) %><%= link_to "/ list all post", blog_path(subdomain: blog.subdomain,id:blog.id) if request.subdomain!="www"%></li>
+  <% end %>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>

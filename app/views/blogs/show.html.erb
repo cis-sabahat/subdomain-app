@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @blog.name %></h1>
+<hr />
+<%if @posts.present? %>
+	<% @posts.each do |post| %>
+		<h3><%= post.title %></h3>
+		<p><%= truncate post.content, length: 160 %></p>
+		<%= link_to "Read More", post %>
+	<% end %>
+<% else %>
+	<p>No post corresponding to this blog. Want to create new? <%= link_to "click here", new_post_path%></p>
+<% end %>
